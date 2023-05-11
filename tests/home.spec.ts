@@ -41,7 +41,6 @@ test("Verify navigation links", async ({page}) => {
     
     const navLinks = page.locator('#mainLinksID a')
 
-    await page.waitForTimeout(3000);
-
+    await expect(navLinks.first()).toBeVisible();
     expect( await navLinks.allInnerTexts()).toEqual(expectedLinks)
 })
